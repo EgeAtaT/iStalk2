@@ -19,7 +19,7 @@ public class AllStalksActivity extends FragmentActivity {
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
 
         Fragment fragment = new Fragment();
-        fragmentTransaction.add(R.id.fragment_container, fragment);
+        fragmentTransaction.add(R.id.people_list, fragment);
         fragmentTransaction.commit();
     }
 
