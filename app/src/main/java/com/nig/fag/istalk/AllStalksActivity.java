@@ -1,29 +1,48 @@
 package com.nig.fag.istalk;
 
+import android.app.ListActivity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Doruk on 30.06.2015.
  */
-public class AllStalksActivity extends FragmentActivity {
+public class AllStalksActivity extends ListActivity {
+
+    private List<String> listValues;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_allstalks);
 
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        listValues = new ArrayList<String>();
+        listValues.add("Android");
+        listValues.add("iOS");
+        listValues.add("Symbian");
+        listValues.add("Blackberry");
+        listValues.add("Windows Phone");
 
-        Fragment fragment = new Fragment();
-        fragmentTransaction.add(R.id.people_list, fragment);
-        fragmentTransaction.commit();
+        ArrayAdapter<String> myAdapter = new ArrayAdapter <String>(this,
+                R.layout.person_row, R.id.listText, listValues);
+        setListAdapter(myAdapter);
     }
 
-    protected Fragment createFragment(){
+    protected void onListItemClick(ListView list, View view, int position, long id) {
+        super.onListItemClick(list, view, position, id);
 
+        String selectedItem = (String) getListView().getItemAtPosition(position);
+        //String selectedItem = (String) getListAdapter().getItem(position);
+
+        Toast toast = Toast.makeText(getApplicationContext(),
+                "You clicked " + selectedItem + " at position " + position,
+                Toast.LENGTH_SHORT);
     }
+
 }
