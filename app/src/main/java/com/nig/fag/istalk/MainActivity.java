@@ -1,12 +1,15 @@
 package com.nig.fag.istalk;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
 public class MainActivity extends Activity {
+
+    public Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +34,15 @@ public class MainActivity extends Activity {
         switch (item.getItemId()) {
             case R.id.action_people:
                 //openSearch();
+                intent = new Intent(this, AllStalksActivity.class);
+                startActivity(intent);
                 return true;
             case R.id.action_settings:
                 //openSettings();
+                return true;
+            case R.id.action_lists:
+                intent = new Intent(this, ListsActivity.class);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

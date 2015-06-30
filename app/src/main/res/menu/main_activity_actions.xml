@@ -4,11 +4,15 @@
       tools:context="com.nig.fag.istalk.MainActivity"
       xmlns:istalk="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/action_people"
-        android:icon="@drawable/ic_action_people"
-        android:title="@string/action_people"
-        istalk:showAsAction="ifRoom" />
+          android:icon="@drawable/ic_action_people"
+          android:title="@string/action_people"
+          istalk:showAsAction="ifRoom" />
+    <item android:id="@+id/action_lists"
+          android:icon="@drawable/ic_action_list"
+          android:title="@string/action_lists"
+          istalk:showAsAction="ifRoom" />
     <!-- Settings, should always be in the overflow -->
     <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        istalk:showAsAction="never" />
+          android:title="@string/action_settings"
+          istalk:showAsAction="never" />
 </menu>
