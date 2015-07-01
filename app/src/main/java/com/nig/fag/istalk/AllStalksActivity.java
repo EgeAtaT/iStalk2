@@ -4,6 +4,7 @@ import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -16,6 +17,9 @@ import java.util.List;
 public class AllStalksActivity extends ListActivity {
 
     private List<String> listValues;
+    private Button mAddButton;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +33,17 @@ public class AllStalksActivity extends ListActivity {
         listValues.add("Blackberry");
         listValues.add("Windows Phone");
 
+        //TODO: Better design with hold-down and multi-select to delete feature.
         ArrayAdapter<String> myAdapter = new ArrayAdapter <String>(this,
                 R.layout.person_row, R.id.listText, listValues);
         setListAdapter(myAdapter);
+
+        mAddButton = (Button)findViewById(R.id.add_username);
+        mAddButton.setOnClickListener(new View.OnClickListener(){
+           public void onClick(View v){
+               //TODO: Set text to "Checking..." and disable button. Bad response --> dialog.
+           }
+        });
     }
 
     protected void onListItemClick(ListView list, View view, int position, long id) {
@@ -44,5 +56,6 @@ public class AllStalksActivity extends ListActivity {
                 "You clicked " + selectedItem + " at position " + position,
                 Toast.LENGTH_SHORT);
     }
+
 
 }

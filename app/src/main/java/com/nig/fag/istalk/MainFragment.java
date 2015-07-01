@@ -22,6 +22,7 @@ public class MainFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //TODO: Use Twitter API.
         listValues = new ArrayList<String>();
         listValues.add("Android");
         listValues.add("iOS");
@@ -30,6 +31,7 @@ public class MainFragment extends ListFragment {
         listValues.add("Windows Phone");
         listValues.add("asdf");
 
+        //TODO: Custom design for encapsulating tweets.
         ArrayAdapter<String> myAdapter = new ArrayAdapter <String>(getActivity(),
                 R.layout.person_row, R.id.listText, listValues);
         setListAdapter(myAdapter);

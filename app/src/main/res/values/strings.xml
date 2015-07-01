@@ -8,4 +8,5 @@
     <string name="action_people">Stalks</string>
     <string name="action_lists">Lists</string>
     <string name="username_hint">Enter stalkable Twitter username.</string>
+    <string name="check_user">Check</string>
 </resources>
