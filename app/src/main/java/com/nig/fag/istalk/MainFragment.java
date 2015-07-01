@@ -34,6 +34,7 @@ public class MainFragment extends ListFragment {
                 R.layout.person_row, R.id.listText, listValues);
         setListAdapter(myAdapter);
 
+
         setHasOptionsMenu(true);
     }
 

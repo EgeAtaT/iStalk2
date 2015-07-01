@@ -7,4 +7,5 @@
     <string name="action_search">Search</string>
     <string name="action_people">Stalks</string>
     <string name="action_lists">Lists</string>
+    <string name="username_hint">Enter stalkable Twitter username.</string>
 </resources>
